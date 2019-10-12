@@ -22,26 +22,26 @@ module.exports = {
         return queryInterface.bulkInsert('Spots', [{
           name: 'Carpati',
           wind: 15.5,
-          country_id: 1,
+          countryId: 1,
         },
         {
           name: 'Paduri',
           wind: 50.6,
-          country_id: 1,
+          countryId: 1,
         },
         {
           name: 'Reyjkavisky',
           wind: 0.0,
-          country_id: 2,
+          countryId: 2,
         },
         {
           name: 'Nowhere',
           wind: 20.5,
-          country_id: null,
+          countryId: null,
         }], {}).then(() => {
         return queryInterface.bulkInsert('Favorites', [{
-          user_id: 1,
-          spot_id: 2,
+          userId: 1,
+          spotId: 2,
         }], {})})})});
   },
 

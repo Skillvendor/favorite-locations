@@ -3,8 +3,8 @@ module.exports = (sequelize, DataTypes) => {
   const Spot = sequelize.define('Spot', {
     name: DataTypes.STRING,
     wind: DataTypes.FLOAT,
-    country_id: DataTypes.INTEGER
-  }, {});
+    countryId: DataTypes.INTEGER
+  });
   Spot.associate = function(models) {
     // associations can be defined here
     Spot.belongsTo(models.Country);

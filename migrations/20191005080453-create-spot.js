@@ -15,7 +15,7 @@ module.exports = {
       wind: {
         type: Sequelize.FLOAT
       },
-      country_id: {
+      countryId: {
         type: Sequelize.INTEGER,
         references: {
           model: 'Countries', // name of Target table
