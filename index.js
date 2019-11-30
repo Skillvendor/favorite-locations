@@ -5,8 +5,15 @@ const countriesRoutes = require('./routes/countries');
 const favoritesRoutes = require('./routes/favorites');
 const authMiddleware = require('./middleware/auth');
 const app = express();
+const helmet = require('helmet')
+const compression = require('compression')
+const morgan = require('./config/morgan')
 
+console.log(morgan)
 app.use(express.json());
+app.use(helmet())
+app.use(compression())
+app.use(morgan)
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -24,6 +31,7 @@ app.use('/api', spotsRoutes)
 app.use('/api', favoritesRoutes)
 app.use('/api', countriesRoutes)
 
+
 app.use((error, req, res, next) => {
   const {
     statusCode,
@@ -35,4 +43,4 @@ app.use((error, req, res, next) => {
 })
 
 
-app.listen(8080)
+app.listen(5004)
